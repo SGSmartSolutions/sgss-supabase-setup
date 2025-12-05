@@ -41,7 +41,7 @@ How to use (on a fresh server)
 
 1. Clone the repo
 
-git clone https://github.com/YOUR-ORG/sgss-supabase-multi-setup.git
+git clone https://github.com/SGSmartSolutions/sgss-supabase-setup.git
 cd sgss-supabase-multi-setup
 
 Replace YOUR-ORG with your GitHub username or organization.
