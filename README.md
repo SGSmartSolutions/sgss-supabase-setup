@@ -1,22 +1,26 @@
-SGSS Supabase Multi-Setup
+# SGSS Supabase Multi-Setup
 
-This repository is a template to bootstrap multiple self-hosted Supabase projects
-on a single Ubuntu server, with hard separation (one Supabase stack per app).
-	•	Base setup (Docker, UFW, jq)
-	•	Traefik reverse proxy + Let’s Encrypt (HTTPS)
-	•	Separate Supabase stack per project:
-	•	own Postgres database
-	•	own Studio
-	•	own API URL
-	•	own keys
+This repository is a **template** to bootstrap multiple self-hosted Supabase projects
+on a single Ubuntu server, with **hard separation** (one Supabase stack per app).
 
-⚠️ This repo is designed to be public.
-Real configuration and secrets are only created on the server and are ignored via .gitignore.
+You get:
 
-⸻
+- Base setup (Docker, UFW, jq)
+- Traefik reverse proxy + Let's Encrypt (HTTPS)
+- Separate Supabase stack per project:
+  - own Postgres database
+  - own Studio
+  - own API URL
+  - own keys
 
-Folder structure
+> ⚠️ This repo is designed to be **public**.  
+> Real configuration and secrets are only created on the server and are ignored via `.gitignore`.
 
+---
+
+## Folder structure
+
+```text
 configs/
   supabase-projects.example.json   # example config (committed to git)
   supabase-projects.json           # real config (created on server, ignored by git)
@@ -68,7 +72,7 @@ Under "projects": one entry per app / Supabase project, for example:
   "admin_email": "inbox-admin@example.com"
 }
 
-Fields:
+Field meanings:
 	•	id
 Short identifier for the project (used internally in container names, etc.).
 	•	description
@@ -274,3 +278,4 @@ The goal is that you (and partners) can:
 	2.	Edit one JSON config file on the server.
 	3.	Run a few scripts.
 	4.	Get a fully working, multi-project, self-hosted Supabase environment with clean separation between apps.
+
