@@ -1,0 +1,33 @@
+{
+  "base": {
+    "ssh_port": 22,
+    "letsencrypt_email": "admin@example.com",
+    "traefik_dashboard_domain": "traefik.example.com"
+  },
+  "projects": [
+    {
+      "id": "inbox",
+      "description": "SGSS Inbox / Ticket App",
+      "supabase_dir": "/opt/supabase-inbox",
+      "studio_domain": "studio.inbox.example.com",
+      "api_domain": "api.inbox.example.com",
+      "admin_email": "inbox-admin@example.com"
+    },
+    {
+      "id": "portal",
+      "description": "Customer portal",
+      "supabase_dir": "/opt/supabase-portal",
+      "studio_domain": "studio.portal.example.com",
+      "api_domain": "api.portal.example.com",
+      "admin_email": "portal-admin@example.com"
+    },
+    {
+      "id": "analytics",
+      "description": "Analytics database",
+      "supabase_dir": "/opt/supabase-analytics",
+      "studio_domain": "studio.analytics.example.com",
+      "api_domain": "api.analytics.example.com",
+      "admin_email": "analytics-admin@example.com"
+    }
+  ]
+}
