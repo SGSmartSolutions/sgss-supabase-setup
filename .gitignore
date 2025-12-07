@@ -1,17 +1,29 @@
-# Real config (only keep the example config in git)
-configs/supabase-projects.json
-
-# Supabase environment files (per project)
-**/.env
-
-# Let's Encrypt / ACME data
-acme.json
-
-# Logs
-*.log
-
-# OS / editor noise
+# OS junk
 .DS_Store
 Thumbs.db
-.idea/
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# Env & secrets
+.env
+.env.local
+.env.*.local
+configs/supabase-projects.json
+supabase/.env
+
+# Docker
+**/acme.json
+**/logs/
+**/data/
+
+# Editors / IDEs
 .vscode/
+.idea/
+
+# Misc
+*.log
