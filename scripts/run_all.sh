@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-echo "=== SGSS Supabase multi-project full setup ==="
+echo "=== SGSS Supabase Setup – Full Run ==="
 
+echo
+echo "[1/3] 00_base_setup.sh"
 bash "$SCRIPT_DIR/00_base_setup.sh"
+
+echo
+echo "[2/3] 01_traefik_setup.sh"
 bash "$SCRIPT_DIR/01_traefik_setup.sh"
+
+echo
+echo "[3/3] 02_supabase_per_project.sh"
 bash "$SCRIPT_DIR/02_supabase_per_project.sh"
 
 echo
-echo "=== All setup steps finished. ==="
-echo "Next steps:"
-echo "- Create DNS A records for all domains defined in configs/supabase-projects.json."
-echo "- Add Traefik labels and the 'proxy' network to the relevant Supabase services"
-echo "  in each project's docker-compose file so Studio/API are reachable via their domains."
+echo "=== Alle Schritte ausgeführt. ==="
+echo "Jetzt kannst du die DNS-Einträge für deine Domains setzen und (falls gewünscht) deinen Traefik-Reverse-Proxy auf die Supabase-Container zeigen lassen."
